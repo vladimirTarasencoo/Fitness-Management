@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { AuthService } from "../auth.service";
 
 @Component({
   selector: "fm-sign-in-component",
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 export class SignInComponent implements OnInit {
   signInForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {}
 
   ngOnInit() {
     this.signInForm = this.fb.group({
