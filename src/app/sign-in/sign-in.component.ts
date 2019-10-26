@@ -2,11 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
-  selector: "app-sign-in-component",
-  templateUrl: "./sign-in-component.component.html",
-  styleUrls: ["./sign-in-component.component.css"]
+  selector: "fm-sign-in-component",
+  templateUrl: "./sign-in.component.html",
+  styleUrls: ["./sign-in.component.scss"]
 })
-export class SignInComponentComponent implements OnInit {
+export class SignInComponent implements OnInit {
   signInForm: FormGroup;
 
   constructor(private fb: FormBuilder) {}
