@@ -1,3 +1,4 @@
+import { AuthGuard } from "./auth.guard";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { RegisterComponent } from "./register/register.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
@@ -7,7 +8,11 @@ const routes: Routes = [
   { path: "", redirectTo: "/sign-in", pathMatch: "full" },
   { path: "sign-in", component: SignInComponent },
   { path: "register", component: RegisterComponent },
-  { path: "my-profile", component: UserProfileComponent }
+  {
+    path: "my-profile",
+    component: UserProfileComponent,
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({
