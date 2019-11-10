@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import dayGridPlugin from "@fullcalendar/daygrid"
 
-
 @Component({
   selector: 'fm-calendar',
   templateUrl: './calendar.component.html',

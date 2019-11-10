@@ -4,14 +4,7 @@
     <div [routerLink]="['/schedule']" class="menu-item">Schedule</div>
     <div [routerLink]="['/cash-balance']"class="menu-item">Cash Balance</div>
     <div class="menu-item">Diet plan</div>
-    
-    <mat-menu #appMenu="matMenu">
-        <button mat-menu-item>Settings</button>
-        <button mat-menu-item>Help</button>
-        <button mat-menu-item>Log Out</button>
-    </mat-menu>
-        
-    <div class="profile" [matMenuTriggerFor]="appMenu">
+    <div class="profile">
         <img src="..\assets\avatar_icon.png" class="avatar" alt="" width="35">
         <div class="profile-name">Denis Maximenko</div>
     </div>
