@@ -16,6 +16,7 @@ import { MenuComponent } from './menu/menu.component';
 import { SlideMenuComponent } from './slide-menu/slide-menu.component';
 import { ScheduleModule } from './schedule/schedule.module';
 import { CashBalanceModule } from './cash-balance/cash-balance.module';
+import { DietPlanModule } from './diet-plan/diet-plan.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { CashBalanceModule } from './cash-balance/cash-balance.module';
     AngularFireAuthModule,
     ScheduleModule,
     CashBalanceModule,
+    DietPlanModule
   ],
   providers: [],
   bootstrap: [AppComponent]

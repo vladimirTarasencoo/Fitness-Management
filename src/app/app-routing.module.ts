@@ -7,6 +7,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ActivityComponent } from './activity/activity.component';
 import { CashBalanceComponent } from './cash-balance/cash-balance.component';
+import { DietPlanComponent } from './diet-plan/diet-plan.component';
 const routes: Routes = [
   { path: "", redirectTo: "/sign-in", pathMatch: "full" },
   { path: "sign-in", component: SignInComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: "schedule", component: ScheduleComponent },
   { path: "schedule/:id", component: ActivityComponent },
   { path: "cash-balance", component: CashBalanceComponent },
+  { path: "diet-plan", component: DietPlanComponent },
   {
     path: "home",
     component: UserProfileComponent,

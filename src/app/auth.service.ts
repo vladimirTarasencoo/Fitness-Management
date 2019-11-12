@@ -36,10 +36,12 @@ export class AuthService {
     return user !== null;
   }
 
-  async signIn(email, password) {
+  signIn(email, password) {
+    console.log(email,password)
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
       .then(result => {
+        console.log(result)
         this.ngZone.run(() => {
           this.router.navigate(["home"]);
           this.setUserData(result.user);
