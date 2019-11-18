@@ -37,18 +37,20 @@ export class AuthService {
   }
 
   signIn(email, password) {
+    console.log(email,password)
     return this.afAuth.auth
       .signInWithEmailAndPassword(email, password)
       .then(result => {
+        console.log(result)
         this.ngZone.run(() => {
-          this.router.navigate(["my-profile"]);
+          this.router.navigate(["home"]);
           this.setUserData(result.user);
         });
       })
       .catch(error => window.alert(error));
   }
 
-  register(email, password) {
+  async register(email, password) {
     return this.afAuth.auth
       .createUserWithEmailAndPassword(email, password)
       .then(result => {
@@ -62,7 +64,7 @@ export class AuthService {
     return this.authLogin(new auth.GoogleAuthProvider());
   }
 
-  signOut() {
+  async signOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem("user");
       this.router.navigate(["sign-in"]);
@@ -74,7 +76,7 @@ export class AuthService {
       .signInWithPopup(provider)
       .then(result => {
         this.ngZone.run(() => {
-          this.router.navigate(["my-profile"]);
+          this.router.navigate(["home"]);
         });
         this.setUserData(result.user);
       })

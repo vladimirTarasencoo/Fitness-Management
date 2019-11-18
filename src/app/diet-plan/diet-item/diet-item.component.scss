@@ -1,0 +1,82 @@
+.diet-plan {
+    float: left;
+    justify-content: center;
+    align-content: center;
+    margin: 1em;
+    min-height: 15em;
+    max-width: 13em;
+    box-shadow: 0 0 10px rgba(1,2,2,1.5);
+    background-color: white;
+}
+
+.second-layer {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    min-height: 5.7em;
+    padding-top: 2em;
+    position: relative;
+    z-index: 2;
+    font-size: 3vh;
+}
+
+.diet-header {
+    background-image: url('../../../assets/meal.jpg');
+    background-size: 13em;
+    background-repeat: no-repeat;
+    min-width: 13em;
+    min-height: 8em;
+    background-color: green;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.diet-body {
+    padding-top: 1.5em;
+    padding-left: 1em;
+    float: left;
+    background-color: white;
+    width: 100%;
+    min-height: 18em;
+    white-space: pre-wrap;
+    font-size: 1.8vh;
+    position: relative;
+    z-index: 1;
+}
+
+.diet-link {
+    font-size: 2.5vh;
+    background-color: white;
+    max-height: 15.5em;
+    padding-left: 25%;
+    padding-bottom: 1em;
+    display: flex;
+    cursor: pointer;
+}
+
+.diet-plan:hover > .diet-header {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.diet-plan:hover > .second-layer {
+    color: white;
+    background-color: black;
+    opacity: 0.5;
+    transition: background-color 1s;
+}
+
+.diet-plan:hover > .diet-body {
+    min-height: 22em;
+    transition: min-height 1s;
+}
+
+.diet-plan:hover {
+    margin-top: -0.5em;
+    transition: margin-top 1s;
+}
+
+
+
+

@@ -1,0 +1,22 @@
+.diet-plan {
+    background-image: url('../../assets/salad.png'), url('../../assets/coco.png'), url('../../assets/banana sup bottom.png');
+    background-position: left top, 30em 25em, right top;
+    background-repeat: no-repeat;
+    min-height: 89%;
+    background-size: 50em, 40em, 35em;
+}
+
+.diet-header {
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    padding-top: 1.5em;
+}
+
+.diet-list {
+    float: left;
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    width: 100%;
+}

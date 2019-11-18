@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
+import { CommonModule } from '@angular/common';  
 import { NgModule } from "@angular/core";
-
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -11,23 +11,35 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { RegisterComponent } from "./register/register.component";
-import { FormsModule } from "@angular/forms";
+import { ActivityComponent } from './activity/activity.component';
+import { MenuComponent } from './menu/menu.component';
+import { SlideMenuComponent } from './slide-menu/slide-menu.component';
+import { ScheduleModule } from './schedule/schedule.module';
+import { CashBalanceModule } from './cash-balance/cash-balance.module';
+import { DietPlanModule } from './diet-plan/diet-plan.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     UserProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    ActivityComponent,
+    MenuComponent,
+    SlideMenuComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    FormsModule
+    ScheduleModule,
+    CashBalanceModule,
+    DietPlanModule
   ],
   providers: [],
   bootstrap: [AppComponent]

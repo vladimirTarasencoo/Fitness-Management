@@ -1,0 +1,65 @@
+.menu {
+    top: 0;
+    min-height: 4.5em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.menu-item {
+    margin-left: 7%;
+    margin-top: 1.5em;
+    margin-right: 2em;
+    cursor: pointer;
+    float: left;
+    display: flex;
+}
+
+.logo {
+    background-color: purple;
+    border-radius: 100%;
+    float: left;
+    min-width: 4.5em;
+    min-height: 4.5em;
+}
+
+.logo-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+}
+
+.profile {
+    margin-top: 0.7em;
+    border-radius: 25px;
+    float: right;
+    min-height: 1em;
+    padding: 0.3em;
+    margin-right: 2em;
+    display: flex;
+}
+
+.profile-name {
+    float: left;
+    margin: 0.5em;
+}
+
+.avatar {
+    float: left;
+    min-width: 2.5em;
+    max-height: 2.5em;
+}
+
+.profile:hover {
+    margin-top: 0.7em;
+    background-color: lightgray;
+    border-radius: 25px;
+    float: right;
+    min-height: 1em;
+    padding: 0.3em;
+    margin-right: 2em;
+    cursor: pointer;
+}
+
