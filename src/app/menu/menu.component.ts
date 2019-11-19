@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../auth.service";
 
 @Component({
   selector: 'fm-menu',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
   }
 
+  logout() {
+    console.log("logged out!")
+    this.authService.signOut();
+  }
 }

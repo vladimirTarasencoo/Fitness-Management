@@ -4,8 +4,15 @@
     <div [routerLink]="['/schedule']" class="menu-item">Schedule</div>
     <div [routerLink]="['/cash-balance']" class="menu-item">Cash Balance</div>
     <div [routerLink]="['/diet-plan']" class="menu-item">Diet plan</div>
-    <div class="profile">
+    <div class="profile" ngbDropdown>
         <img src="..\assets\avatar_icon.png" class="avatar" alt="" width="35">
-        <div class="profile-name">Denis Maximenko</div>
+        <div class="profile-name" ngbDropdownToggle>Denis Maximenko</div>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="mt-2 dropdown">
+            <button ngbDropdownItem class="dropdown-item">Home</button>
+            <button ngbDropdownItem class="dropdown-item">Settings</button>
+            <button ngbDropdownItem class="dropdown-item">Help</button>
+            <hr>
+            <button (click)="logout()" ngbDropdownItem class="dropdown-item">Log out</button>
+          </div>
     </div>
 </div>

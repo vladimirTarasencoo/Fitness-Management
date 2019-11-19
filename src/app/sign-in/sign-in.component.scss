@@ -1,4 +1,257 @@
-.parent {
-  background-color: #e9ecef;
-  height: 100vh;
+
+.group { 
+  position: relative; 
+  margin-bottom: 25px; 
+  min-width: 20em;
 }
+input {
+  font-size:18px;
+  padding: 10px 1px 10px 1px;
+  display:block;
+  width: 25em;
+  border:none;
+  border-bottom: 2px solid white;
+  background-color: rgba($color: #000000, $alpha: 0.0);
+  color: white;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:white; 
+  font-size:15px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color:white;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:white; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:25em; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.1;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+.back-ground {
+  position: relative;
+  overflow: hidden;
+  background-image: url('/../assets/woman-sport.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.sign-in {
+  position: absolute;
+  right: 0.7%;
+  min-height: 25em;
+  margin-top: 10%;
+  vertical-align: top;
+  max-width: 30em;
+  padding: 1em;
+  margin-right: 2em;
+  z-index: 1000;
+}
+
+.sign-in-button {
+  background-color: purple;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  max-height: 4em;
+  min-width: 12em;
+  justify-content: center;
+  border: none;
+  padding: 1em;
+  margin-top: 3em;
+  float: left;
+}
+
+.item {
+  margin-top: 5em;
+  max-height: 4em;
+  min-width: 20em;
+  display: block;
+}
+
+.remember {
+  margin-top: 5em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 0;
+  float: left;
+  min-width: 15em;
+}
+
+.checkinput {
+  position: relative;
+  float: left;
+  top: 0.4em;
+  width: 1em;
+  margin-right: 0.5em;
+  
+}
+
+[hidden] { 
+  display: none !important;
+}
+
+.sign-in-label {
+  float: right;
+  color: white;
+  position: relative;
+  font-size: 2em;
+}
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  appearance: checkbox !important;
+  padding: 10px;
+}
+
+.fpsswd {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  float: right;
+  cursor: pointer;
+  margin-top: 5em;;
+}
+
+.register-button {
+  float: right;
+  margin-top: 3em;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.circle {
+  position: absolute;
+  z-index: 50;
+  background-color: rgb(66, 65, 65);
+  opacity: 0.8;
+  width: 70em;
+  height: 70em;
+  border-radius: 50%;
+  display: inline-block;
+  top: -10em;
+  right: -35em;
+  overflow: hidden;
+}
+
+.circle1 {
+  position: absolute;
+  z-index: 51;
+  background-color: rgb(4, 25, 133);
+  opacity: 0.2;
+  width: 25em;
+  height: 25em;
+  border-radius: 50%;
+  display: inline-block;
+  top: -10em;
+  right: 20em;
+  overflow: hidden;
+}
+
+.circle2 {
+  position: absolute;
+  z-index: 50;
+  background-color: rgb(65, 236, 182);
+  opacity: 0.2;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  display: inline-block;
+  top: 30em;
+  left: 40em;
+  overflow: hidden;
+}
+
+.circle3 {
+  position: absolute;
+  z-index: 50;
+  background-color: rgb(194, 28, 255);
+  opacity: 0.2;
+  width: 45em;
+  height: 45em;
+  border-radius: 50%;
+  display: inline-block;
+  bottom: -10em;
+  left: -15em;
+  overflow: hidden;
+}
+
+.logo-image {
+  display: block;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+

@@ -1,4 +1,4 @@
-<div class="parent">
+<div class="parent back-ground">
   <!-- <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -45,11 +45,32 @@
       </div>
     </div>
   </div> -->
-  <form >
-      <label for="">Name</label>
-      <input #username1 type="text">
-      <label for="">Password</label>
-      <input #userpassword1 type="text">
-      <input type="submit" (click)="login()" >
-    </form>
+  <div class="sign-in">
+      <div class="sign-in-label">Sign In and Sign Up</div>
+      <div class="item">
+        <div class="group">      
+          <input #username1 type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Username</label>
+        </div>
+        <div class="group">      
+          <input #userpassword1 type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Password</label>
+        </div>
+      </div>
+    <div class="remember"><input type="checkbox" class="checkinput">Remember me</div>
+    <div class="fpsswd">Forgot password?</div>
+    <button (click)="login()" class="sign-in-button">Log in</button>
+    <div class="register-button">
+      Dont have an account...? <b>Sign Up Here</b> 
+    </div>
+  </div>
+  <span class="circle"></span>
+  <span class="circle1"></span>
+  <span class="circle2"></span>
+  <span class="circle3"></span>
+  <div class="logo"><img src="..\assets\logo_white.png"  class="logo-image" alt="" width="100"></div>
 </div>
