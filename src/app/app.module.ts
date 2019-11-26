@@ -1,5 +1,6 @@
+import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -11,12 +12,13 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireAuthModule } from "@angular/fire/auth";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { RegisterComponent } from "./register/register.component";
-import { ActivityComponent } from './activity/activity.component';
-import { MenuComponent } from './menu/menu.component';
-import { SlideMenuComponent } from './slide-menu/slide-menu.component';
-import { ScheduleModule } from './schedule/schedule.module';
-import { CashBalanceModule } from './cash-balance/cash-balance.module';
-import { DietPlanModule } from './diet-plan/diet-plan.module';
+import { ActivityComponent } from "./activity/activity.component";
+import { MenuComponent } from "./menu/menu.component";
+import { SlideMenuComponent } from "./slide-menu/slide-menu.component";
+import { ScheduleModule } from "./schedule/schedule.module";
+import { CashBalanceModule } from "./cash-balance/cash-balance.module";
+import { DietPlanModule } from "./diet-plan/diet-plan.module";
+import {NgbModule, NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { DietPlanModule } from './diet-plan/diet-plan.module';
     AngularFireAuthModule,
     ScheduleModule,
     CashBalanceModule,
-    DietPlanModule
+    DietPlanModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

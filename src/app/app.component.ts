@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import dayGridPlugin from "@fullcalendar/daygrid"
+import dayGridPlugin from "@fullcalendar/daygrid";
+import { AuthService } from "../app/auth.service";
 
 @Component({
   selector: "app-root",
@@ -8,6 +9,7 @@ import dayGridPlugin from "@fullcalendar/daygrid"
 })
 export class AppComponent {
   title = "FitnessManagement";
+  constructor(private authService: AuthService) {}
 
   calendarPlugins = [dayGridPlugin];
 }

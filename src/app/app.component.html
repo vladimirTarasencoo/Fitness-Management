@@ -1,2 +1,2 @@
-<fm-menu *ngIf="!isLoggedIn"></fm-menu>
+<fm-menu [hidden]="!authService.isLoggedIn"></fm-menu>
 <router-outlet></router-outlet>
