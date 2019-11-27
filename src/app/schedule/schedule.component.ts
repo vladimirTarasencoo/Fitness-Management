@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { Activity } from '../models/activity';
+import { IndividualPlan } from '../models/IndividualPlan';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'fm-schedule',
@@ -15,10 +18,37 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class ScheduleComponent implements OnInit {
-
-  constructor() { }
+  activityName = "";
+  dp = "";
+  time = {hour: 13, minute: 30};
+  trainee = "";
+  activityDescription = "";
+  activities = [];
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+    this.appService.getUsers().subscribe(x => this.activities = x);
+    this.appService.getActivity("ryif4kkkKTsvnkEvjlfh").subscribe(console.log);
+  }
+
+  submit() {
+    const act = new Activity();
+    act.name = this.activityName;
+    act.date = this.dp;
+    act.time = this.time;
+    act.trainee = this.trainee;
+    act.activityDescription = this.activityDescription;
+    this.appService.createActivity(act);
+
+    const plan = new IndividualPlan();
+    plan.description = "Default description";
+    plan.activites = this.activities;
+    this.appService.createIndividualPlan(plan);
+
+    this.activityName = "";
+    this.activityDescription = "";
+    this.trainee = "";
+    this.dp = "";
   }
 
 }

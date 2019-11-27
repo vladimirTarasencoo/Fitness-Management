@@ -28,16 +28,6 @@ activities = [];
   }
 
   submit() {
-    // const act = new Activity();
-    // act.name = this.test;
-    // act.description = this.test;
-    // act.activityType = this.test;
-    // this.appService.createActivity(act);
-
-    // const plan = new IndividualPlan();
-    // plan.description = this.test;
-    // plan.activites = this.activities;
-    // this.appService.createIndividualPlan(plan);
 
   }
 

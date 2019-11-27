@@ -4,3 +4,57 @@
     background-size: cover;
     height: 89%;
 }
+
+.activity-form {
+    max-width: 22em;
+    min-height: 30em;
+    background-color: rgba($color: #ffffff, $alpha: 0.5);
+    display: flex;
+    float: left;
+    margin-top: 4em;
+    margin-left: 3em;
+}
+
+.calendar {
+    display: flex;
+    float: left;
+}
+
+.item-title {
+    margin: 5em;
+}
+
+.suggest-activity {
+    margin: 2em;
+}
+
+.form-item {
+    margin-bottom: 1em;
+    min-width: 18em;
+}
+
+.calendar-icon {
+    background-image: url('../../assets/calendar.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.time {
+    display: flex;
+    float: left;
+}
+
+.time-label {
+    margin-top: 2em;
+    margin-right: 1em;
+    font-size: 3vh;
+}
+
+.submit-activity-button {
+    border: none;
+    background-color: gray;
+    padding: 10px 40px 10px 40px;
+    color: white;
+    margin-top: 0.5em;
+}

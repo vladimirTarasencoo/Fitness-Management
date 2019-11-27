@@ -1,6 +1,7 @@
 export class Activity {
   name: string;
-  date?: Date;
-  description?: string;
-  activityType: string;
+  date: string;
+  time: { hour: number, minute: number};
+  trainee: string;
+  activityDescription: string;
 }

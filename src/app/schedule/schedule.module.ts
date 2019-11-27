@@ -5,6 +5,8 @@ import { ScheduleRoutingModule } from './schedule-routing.module';
 import { ScheduleComponent } from './schedule.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { CalendarComponent } from './calendar/calendar.component';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     CommonModule,
     ScheduleRoutingModule,
     FullCalendarModule,
+    NgbModule,
+    FormsModule,
   ],
   exports: [
     ScheduleComponent  
