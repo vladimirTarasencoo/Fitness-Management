@@ -1,10 +1,9 @@
 
 <div class="activity-calendar">
-    <full-calendar 
+    <full-calendar
         defaultView="dayGridMonth"
         [plugins]="calendarPlugins"
         [weekends]="false"
-        [events]="bb"
+        [events]="calendarItems"
   ></full-calendar>
-  <div>{{ activities }}</div>
 </div>
