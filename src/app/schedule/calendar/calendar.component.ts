@@ -18,21 +18,16 @@ export class CalendarComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-  }
-
-  async loadData() {
-    var items = []
     this.appService.getActivities().subscribe(activities => {
       activities.forEach(activity => {
         var a = {
           title: activity.name,
           date: this.getDate(activity.date)
         }
-        items.push(a);
+        this.calendarItems.push(a);
       })
     });
-    console.log("items", items);
-    return items;
+    console.log(this.calendarItems);
   }
 
   getDate(date) {

@@ -4,7 +4,10 @@
         defaultView="dayGridMonth"
         [plugins]="calendarPlugins"
         [weekends]="false"
-        [events]="bb"
+        [events]="[
+            { title: 'Training', date: '2019-11-01' },
+            { title: 'Competition', date: '2019-11-12' }
+        ]"
   ></full-calendar>
-  <div>{{ activities }}</div>
+  <div>{{ calendarItems | json}}</div>
 </div>
