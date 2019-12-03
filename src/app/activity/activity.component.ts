@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'fm-activity',
-  templateUrl: './activity.component.html',
-  styleUrls: ['./activity.component.scss']
+  selector: "fm-activity",
+  templateUrl: "./activity.component.html",
+  styleUrls: ["./activity.component.scss"]
 })
 export class ActivityComponent implements OnInit {
 
