@@ -1,4 +1,4 @@
-<div class="parent back-ground">
+<div @background class="parent back-ground">
   <!-- <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -49,13 +49,13 @@
       <div class="sign-in-label">Sign In and Sign Up</div>
       <div class="item">
         <div class="group">
-          <input #username1 type="text" required>
+          <input #username1 type="text" required id="username">
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Username</label>
         </div>
         <div class="group">
-          <input #userpassword1 type="text" required>
+          <input #userpassword1 type="text" required id="password">
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Password</label>
@@ -63,7 +63,7 @@
       </div>
     <div class="remember"><input type="checkbox" class="checkinput">Remember me</div>
     <div class="fpsswd">Forgot password?</div>
-    <button (click)="login()" class="sign-in-button">Log in</button>
+    <button (click)="login()" class="sign-in-button" id="signIn">Log in</button>
     <div class="register-button">
       Dont have an account...? <b>Sign Up Here</b>
     </div>
