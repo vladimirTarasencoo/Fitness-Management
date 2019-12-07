@@ -13,26 +13,9 @@ export class CalendarComponent implements OnInit {
 
   calendarItems = [];
 
-  bb = [
-    { title: "Training", date: "2019-11-01" },
-    { title: "Competition", date: "2019-11-12" }
-  ];
-
   calendarPlugins = [dayGridPlugin];
 
   ngOnInit() {
-<<<<<<< HEAD
-    this.appService.getActivities().subscribe(activities => {
-      activities.forEach(activity => {
-        var a = {
-          title: activity.name,
-          date: this.getDate(activity.date)
-        }
-        this.calendarItems.push(a);
-      })
-    });
-    console.log(this.calendarItems);
-=======
     this.loadData();
   }
 
@@ -42,7 +25,7 @@ export class CalendarComponent implements OnInit {
       .pipe(map((x: any[]) =>
           x.map(a => {
             return {
-              title: a.name,
+              title: "(".concat(a.time.hour).concat(":").concat(a.time.minute).concat(") ").concat(a.name),
               date: this.getDate(a.date)
             };
           })
@@ -51,7 +34,6 @@ export class CalendarComponent implements OnInit {
       .subscribe(activities => {
         this.calendarItems = activities;
       });
->>>>>>> fc96c8ba2d3f4801ff1e2ff5cfa795596982c51e
   }
 
   getDate(date) {
