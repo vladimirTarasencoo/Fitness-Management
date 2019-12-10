@@ -1,9 +1,8 @@
 <div @background class="diet-plan">
-    <h2 class="diet-header">"A Motivating Message"</h2>
-    <div class="diet-list"> 
-        <fm-diet-item></fm-diet-item>
-        <fm-diet-item></fm-diet-item>
-        <fm-diet-item></fm-diet-item>
-        <fm-diet-item></fm-diet-item>
+    <h2 class="diet-header">Diet Plan</h2>
+    <div class="diet-list">
+        <fm-diet-item [title]="'Breakfast'" [diets]="diets?.breakfast" ></fm-diet-item>
+        <fm-diet-item [title]="'Lunch'" [diets]="diets?.lunch"></fm-diet-item>
+        <fm-diet-item [title]="'Dinner'" [diets]="diets?.dinner"></fm-diet-item>
     </div>
 </div>

@@ -1,11 +1,7 @@
-<div class="diet-plan">
+<div *ngIf="diets" class="diet-plan">
     <div class="diet-header"></div>
-    <div class="second-layer">Dinner</div>
-    <div class="diet-body">
-        <li>Advanced Databases</li>
-        <li>Applied System Analyses</li>
-        <li>Enterprise Software System Development</li>
-        <li>Software System Development</li>
-    </div>
-    <div class="diet-link">Full Menu ></div>
+    <div class="second-layer">{{title}}</div>
+    <ul class="diet-body">
+        <li *ngFor="let diet of diets" >{{diet}}</li>
+    </ul>
 </div>

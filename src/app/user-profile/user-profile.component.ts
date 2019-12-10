@@ -1,7 +1,7 @@
 import { IndividualPlan } from "./../models/IndividualPlan";
 import { Activity } from "./../models/activity";
 import { Component, OnInit } from "@angular/core";
-import { trigger, transition, animate, style } from '@angular/animations';
+import { trigger, transition, animate, style } from "@angular/animations";
 import { AppService } from "../app.service";
 
 @Component({
@@ -9,10 +9,10 @@ import { AppService } from "../app.service";
   templateUrl: "./user-profile.component.html",
   styleUrls: ["./user-profile.component.scss"],
   animations: [
-    trigger('background', [
-      transition(':enter', [
+    trigger("background", [
+      transition(":enter", [
         style({ opacity: 0 }),
-        animate('1s', style({ opacity: 1 })),
+        animate("1s", style({ opacity: 1 })),
       ]),
     ])
   ]
@@ -20,11 +20,12 @@ import { AppService } from "../app.service";
 export class UserProfileComponent implements OnInit {
 test = "";
 activities = [];
+balance;
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-    // this.appService.getUsers().subscribe(x => this.activities = x);
-    // this.appService.getActivity("ryif4kkkKTsvnkEvjlfh").subscribe(console.log);
+    this.appService.getUserBalances().subscribe(data => this.balance = data);
+    this.appService.getActivities().subscribe(data => this.activities = data);
   }
 
   submit() {

@@ -1,1 +1,18 @@
-<fm-slide-menu></fm-slide-menu>
+<div class="container">
+  <div *ngIf="balance" class="card activity-container">
+    <div class="card-body">
+      <h2 class="card-title">Welcome, {{balance?.userName}}</h2>
+      <h4 class="card-subtitle mb-2 text-muted">Your current balance is <strong>${{balance?.accountBalance}}</strong></h4>
+      <p class="card-text"><strong>Motivation message</strong>: Today should always be better than yesterday.</p>
+      <a [routerLink]="['/diet-plan']" class="card-link float-right">My Diet Plan</a>
+      <div class="card mt-4 activities-card" >
+        <div class="card-header">
+          My Activities
+        </div>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let activity of activities" class="list-group-item">{{activity?.name}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

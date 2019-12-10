@@ -46,7 +46,7 @@
     </div>
   </div> -->
   <div class="sign-in">
-      <div class="sign-in-label">Sign In and Sign Up</div>
+      <div class="sign-in-label">Sign In</div>
       <div class="item">
         <div class="group">
           <input #username1 type="text" required id="username">
@@ -55,18 +55,18 @@
           <label>Username</label>
         </div>
         <div class="group">
-          <input #userpassword1 type="text" required id="password">
+          <input #userpassword1 type="password" autocomplete="new-password" required id="password">
           <span class="highlight"></span>
           <span class="bar"></span>
           <label>Password</label>
         </div>
       </div>
-    <div class="remember"><input type="checkbox" class="checkinput">Remember me</div>
-    <div class="fpsswd">Forgot password?</div>
-    <button (click)="login()" class="sign-in-button" id="signIn">Log in</button>
-    <div class="register-button">
+    <!-- <div class="remember"><input type="checkbox" class="checkinput">Remember me</div>
+    <div class="fpsswd">Forgot password?</div> -->
+    <button (click)="login()" class="sign-in-button float-right" id="signIn">Log in</button>
+    <!-- <div class="register-button">
       Dont have an account...? <b>Sign Up Here</b>
-    </div>
+    </div> -->
   </div>
   <span class="circle"></span>
   <span class="circle1"></span>

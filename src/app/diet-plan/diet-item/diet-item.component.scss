@@ -4,7 +4,7 @@
     align-content: center;
     margin: 1em;
     min-height: 15em;
-    max-width: 13em;
+    // max-width: 40em;
     box-shadow: 0 0 10px rgba(1,2,2,1.5);
     background-color: white;
 }
@@ -22,12 +22,11 @@
 
 .diet-header {
     background-image: url('../../../assets/meal.jpg');
-    background-size: 13em;
+    background-size: 100%;
     background-repeat: no-repeat;
     min-width: 13em;
     min-height: 8em;
     background-color: green;
-    position: absolute;
     z-index: 1;
     opacity: 0.5;
 }
@@ -76,7 +75,9 @@
     margin-top: -0.0em;
     transition: margin-top 1s;
 }
-
+ul {
+  list-style: none;
+}
 
 
 

@@ -4,4 +4,5 @@ export class Activity {
   time: { hour: number, minute: number};
   trainee: string;
   activityDescription: string;
+  userId: string;
 }

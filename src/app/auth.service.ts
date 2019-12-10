@@ -13,6 +13,7 @@ import { Router } from "@angular/router";
 })
 export class AuthService {
   userData: any;
+  user: any;
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -41,8 +42,10 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(result => {
         this.ngZone.run(() => {
-          this.router.navigate(["home"]);
-          this.setUserData(result.user);
+          this.setUserData(result.user)
+            .then(() => {
+              this.router.navigate(["home"]);
+            });
         });
       })
       .catch(error => window.alert(error));
@@ -61,7 +64,7 @@ export class AuthService {
     return this.authLogin(new auth.GoogleAuthProvider());
   }
 
-  async signOut() {
+  signOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem("user");
       this.router.navigate(["sign-in"]);
