@@ -1,1 +1,12 @@
-<p>cash-balance works!</p>
+<div @background class="balance-page">
+    <h1>{{ user }}</h1>
+    <div>{{ email }}
+        <br>
+        {{ phone }}
+        <div class="balance-field">
+            Your current balance is: {{ balance }}$
+            <br>
+            available till {{ expirationDate }}
+        </div>
+    </div>
+</div>

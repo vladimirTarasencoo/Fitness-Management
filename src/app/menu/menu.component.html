@@ -6,7 +6,7 @@
     <div [routerLink]="['/diet-plan']" class="menu-item" id="dietPlan">Diet plan</div>
     <div class="profile" ngbDropdown>
         <img src="..\assets\avatar_icon.png" class="avatar" alt="" width="35">
-        <div class="profile-name" ngbDropdownToggle id="profile">Denis Maximenko</div>
+        <div class="profile-name" ngbDropdownToggle id="profile">{{user?.displayName}}</div>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="mt-2 dropdown">
             <button ngbDropdownItem class="dropdown-item">Home</button>
             <button ngbDropdownItem class="dropdown-item">Settings</button>

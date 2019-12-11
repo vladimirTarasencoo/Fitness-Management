@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlideMenuComponent implements OnInit {
 
+username: any
+
   constructor() { }
 
   ngOnInit() {
+    this.username = "Recardo Milos";
   }
 
 }

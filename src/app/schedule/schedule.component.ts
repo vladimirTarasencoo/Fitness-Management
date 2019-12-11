@@ -28,7 +28,6 @@ export class ScheduleComponent implements OnInit {
 
   ngOnInit() {
     this.appService.getUsers().subscribe(x => this.activities = x);
-    this.appService.getActivity("ryif4kkkKTsvnkEvjlfh").subscribe(console.log);
   }
 
   submit() {

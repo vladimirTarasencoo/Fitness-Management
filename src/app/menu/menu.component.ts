@@ -7,14 +7,16 @@ import { AuthService } from "../auth.service";
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+  user: any
 
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem("user"));
+    console.log(this.user);
   }
 
   logout() {
-    console.log("logged out!")
     this.authService.signOut();
   }
 }
