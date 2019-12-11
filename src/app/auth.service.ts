@@ -42,11 +42,12 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(result => {
         this.ngZone.run(() => {
-          this.setUserData(result.user)
-            .then(() => {
-              this.router.navigate(["home"]);
-            });
+          this.setUserData(result.user).then(()=>{
+
+          })
+          this.router.navigate(["home"]);
         });
+        window.location.reload();
       })
       .catch(error => window.alert(error));
   }

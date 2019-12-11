@@ -16,9 +16,9 @@ import { ActivityComponent } from "./activity/activity.component";
 import { MenuComponent } from "./menu/menu.component";
 import { SlideMenuComponent } from "./slide-menu/slide-menu.component";
 import { ScheduleModule } from "./schedule/schedule.module";
-import { CashBalanceModule } from "./cash-balance/cash-balance.module";
 import { DietPlanModule } from "./diet-plan/diet-plan.module";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { CashBalanceComponent } from "./cash-balance/cash-balance.component";
 
 
 @NgModule({
@@ -30,6 +30,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     ActivityComponent,
     MenuComponent,
     SlideMenuComponent,
+    CashBalanceComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AngularFirestoreModule,
     AngularFireAuthModule,
     ScheduleModule,
-    CashBalanceModule,
     DietPlanModule,
     NgbModule,
     FormsModule

@@ -8,11 +8,13 @@ import { AuthService } from "../auth.service";
 })
 export class MenuComponent implements OnInit {
   user: any
+  isAdmin:boolean;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem("user"));
+    this.isAdmin = this.user.email.includes('admin');
   }
 
   logout() {

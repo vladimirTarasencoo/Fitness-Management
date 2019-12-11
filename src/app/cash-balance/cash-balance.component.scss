@@ -1,15 +1,24 @@
-.balance-page {
-    background-color: lightcyan;
-    color:white;
-    margin-top: 5em;
-    padding-left: 2em;
-    min-height: 12em;
-    background-image: url('../../assets/woman-boxing.jpeg');
-    background-size: cover;
-    padding-top: 2em;
+// .balance-page {
+//     background-color: lightcyan;
+//     color:white;
+//     margin-top: 5em;
+//     padding-left: 2em;
+//     min-height: 12em;
+//     background-image: url('../../assets/woman-boxing.jpeg');
+//     background-size: cover;
+//     padding-top: 2em;
+// }
+
+// .balance-field {
+//     float: right;
+//     padding-right: 35%;
+// }
+
+.sub-container {
+  margin: 0 auto;
+  max-width: 70%;
 }
 
-.balance-field {
-    float: right;
-    padding-right: 35%;
+.btn {
+  margin-top: 10px;
 }

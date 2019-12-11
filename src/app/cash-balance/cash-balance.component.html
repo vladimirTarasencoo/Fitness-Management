@@ -1,4 +1,4 @@
-<div @background class="balance-page">
+<!-- <div @background class="balance-page">
     <h1>{{ user }}</h1>
     <div>{{ email }}
         <br>
@@ -9,4 +9,24 @@
             available till {{ expirationDate }}
         </div>
     </div>
+</div> -->
+
+<div class="container">
+  <div class="sub-container">
+    <form #form="ngForm" (ngSubmit)="createDiet(form.value)">
+      <label>Breakfast:</label>
+      <input ngModel class="form-control" name="breakfast" type="text">
+
+      <label>Lunch:</label>
+      <input ngModel class="form-control" name="lunch" type="text">
+
+      <label>Dinner:</label>
+      <input ngModel class="form-control" name="dinner" type="text">
+      <br>
+      <select name="user" ngModel class="custom-select">
+        <option [ngValue]="user" *ngFor="let user of users">{{user?.email}}</option>
+      </select>
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+  </div>
 </div>

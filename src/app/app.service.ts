@@ -48,6 +48,10 @@ export class AppService {
     );
   }
 
+  createDiet(diet: any) {
+    return this.createCollection("diets", diet);
+  }
+
   getBalances() {
     return this.firestore.collection("accounts").valueChanges();
   }

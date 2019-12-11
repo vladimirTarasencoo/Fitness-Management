@@ -12,24 +12,29 @@ const routes: Routes = [
   { path: "", redirectTo: "/sign-in", pathMatch: "full" },
   { path: "sign-in", component: SignInComponent },
   { path: "register", component: RegisterComponent },
-  { 
-    path: "schedule", 
+  {
+    path: "schedule",
     component: ScheduleComponent,
-    canActivate: [AuthGuard] 
+    canActivate: [AuthGuard]
   },
-  { 
-    path: "schedule/:id", 
+  {
+    path: "schedule/:id",
     component: ActivityComponent,
     canActivate: [AuthGuard] },
-  { 
-    path: "cash-balance", 
+  {
+    path: "manage-diets",
     component: CashBalanceComponent,
-    canActivate: [AuthGuard] 
+    canActivate: [AuthGuard]
   },
-  { 
-    path: "diet-plan", 
+  // {
+  //   path: "cash-balance",
+  //   component: CashBalanceComponent,
+  //   canActivate: [AuthGuard]
+  // },
+  {
+    path: "diet-plan",
     component: DietPlanComponent,
-    canActivate: [AuthGuard] 
+    canActivate: [AuthGuard]
   },
   {
     path: "home",

@@ -3,10 +3,11 @@
     <div [routerLink]="['/home']" class="menu-item" id="home">Home</div>
     <div [routerLink]="['/schedule']" class="menu-item" id="schedule">My Calendar</div>
     <!-- <div [routerLink]="['/cash-balance']" class="menu-item" id="cashBalance">Cash Balance</div> -->
+    <div *ngIf="isAdmin"  [routerLink]="['/manage-diets']" class="menu-item" id="cashBalance">Manage Diets</div>
     <div [routerLink]="['/diet-plan']" class="menu-item" id="dietPlan">Diet plan</div>
     <div class="profile" ngbDropdown>
         <img src="..\assets\avatar_icon.png" class="avatar" alt="" width="35">
-        <div class="profile-name" ngbDropdownToggle id="profile">{{user.email}}</div>
+        <div class="profile-name" ngbDropdownToggle id="profile">{{user?.email}}</div>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="mt-2 dropdown">
             <!-- <button ngbDropdownItem class="dropdown-item">Home</button>
             <button ngbDropdownItem class="dropdown-item">Settings</button>

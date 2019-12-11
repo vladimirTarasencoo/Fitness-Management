@@ -4,6 +4,7 @@ import { Component, OnInit } from "@angular/core";
 import { trigger, transition, animate, style } from "@angular/animations";
 import { AppService } from "../app.service";
 import { map } from "rxjs/operators";
+import { User } from '../models/user';
 
 @Component({
   selector: "fm-user-profile",
@@ -22,19 +23,31 @@ export class UserProfileComponent implements OnInit {
 test = "";
 activities = [];
 balance;
+user;
+isAdmin;
+users = [];
   constructor(private appService: AppService) { }
 
   ngOnInit() {
     this.appService.getUserBalances().subscribe(data => this.balance = data);
+    this.user = JSON.parse(localStorage.getItem("user"));
+    this.isAdmin = this.user.email.includes('admin');
     this.appService
       .getActivities()
       .pipe(map((x: any[]) => x
-          .filter(act => act.userId === JSON.parse(localStorage.getItem("user")).uid)
+          .filter(act => act.userId === this.user.uid)
         )
       )
       .subscribe(activities => {
         this.activities = activities;
       });
+
+      this.appService
+      .getUsers()
+      .subscribe(
+        users =>
+          (this.users = users.filter((x: User) => !x.email.includes("admin")))
+      );
   }
 
   submit() {

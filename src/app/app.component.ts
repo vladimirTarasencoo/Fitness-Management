@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from "@angular/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import { AuthService } from "../app/auth.service";
@@ -9,7 +10,9 @@ import { AuthService } from "../app/auth.service";
 })
 export class AppComponent {
   title = "FitnessManagement";
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, router: Router) {
+    if(authService.isLoggedIn) router.navigate(["home"])
+  }
 
   calendarPlugins = [dayGridPlugin];
 }

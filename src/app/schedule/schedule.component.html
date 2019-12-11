@@ -2,7 +2,7 @@
     <fm-calendar class="calendar"></fm-calendar>
     <div class="activity-form">
       <ngb-tabset>
-        <ngb-tab>
+        <!-- <ngb-tab>
           <ng-template ngbTabTitle>View activity</ng-template>
           <ng-template ngbTabContent>
             <p class="mock">Loading... </p>
@@ -10,7 +10,7 @@
                 <span class="sr-only">Loading...</span>
             </div>
           </ng-template>
-        </ngb-tab>
+        </ngb-tab> -->
         <ngb-tab id="suggestActivity">
           <ng-template ngbTabTitle class="item-title" id="suggestActivity">Suggest activity</ng-template>
           <ng-template ngbTabContent>
@@ -23,7 +23,7 @@
                       <button class="btn btn-outline-secondary calendar-icon" (click)="d.toggle()" type="button"></button>
                     </div>
                   </div>
-                </div>   
+                </div>
                 <div class="time"><div class="time-label">Time</div><ngb-timepicker name="time" [(ngModel)]="time" [ngModelOptions]="{standalone: true}"></ngb-timepicker></div>
                 <input name="trainee" id="trainee" [(ngModel)]="trainee" class="form-control form-item" placeholder="Trainee" required>
                 <textarea name="activityDescription" id="activityDescription" [(ngModel)]="activityDescription" class="form-control form-item" placeholder="Description..."></textarea>
