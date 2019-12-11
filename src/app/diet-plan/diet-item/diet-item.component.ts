@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'fm-diet-item',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./diet-item.component.scss']
 })
 export class DietItemComponent implements OnInit {
-
+@Input() diets: any;
+@Input() title: string;
   constructor() { }
 
   ngOnInit() {

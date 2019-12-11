@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
-import { Activity } from '../models/activity';
-import { IndividualPlan } from '../models/IndividualPlan';
-import { AppService } from '../app.service';
+import { Component, OnInit } from "@angular/core";
+import { trigger, transition, style, animate } from "@angular/animations";
+import { Activity } from "../models/activity";
+import { IndividualPlan } from "../models/IndividualPlan";
+import { AppService } from "../app.service";
 
 @Component({
-  selector: 'fm-schedule',
-  templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.scss'],
+  selector: "fm-schedule",
+  templateUrl: "./schedule.component.html",
+  styleUrls: ["./schedule.component.scss"],
   animations: [
-    trigger('background', [
-      transition(':enter', [
+    trigger("background", [
+      transition(":enter", [
         style({ opacity: 0 }),
-        animate('1s', style({ opacity: 1 })),
+        animate("1s", style({ opacity: 1 })),
       ]),
     ])
   ]
@@ -37,6 +37,7 @@ export class ScheduleComponent implements OnInit {
     act.time = this.time;
     act.trainee = this.trainee;
     act.activityDescription = this.activityDescription;
+    act.userId = JSON.parse(localStorage.getItem("user")).uid;
     this.appService.createActivity(act);
 
     const plan = new IndividualPlan();

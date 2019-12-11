@@ -7,6 +7,7 @@ import {
 } from "@angular/fire/firestore";
 import { User } from "./models/user";
 import { IndividualPlan } from "./models/IndividualPlan";
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
@@ -30,6 +31,33 @@ export class AppService {
   getActivities() {
     return this.firestore.collection("activities").valueChanges();
   }
+
+  getUserActivities() {
+    return this.getActivities().pipe(
+      map(x => x.find((y: any) => y.userId === this.user.uid))
+    );
+  }
+
+  getDiets() {
+    return this.firestore.collection("diets").valueChanges();
+  }
+
+  getUserDiets() {
+    return this.getDiets().pipe(
+      map(x => x.find((y: any) => y.userId === this.user.uid))
+    );
+  }
+
+  getBalances() {
+    return this.firestore.collection("accounts").valueChanges();
+  }
+
+  getUserBalances() {
+    return this.getBalances().pipe(
+      map(x => x.find((y: any) => y.userId === this.user.uid))
+    );
+  }
+
 
   getActivity(id: string) {
     return this.firestore
