@@ -17,5 +17,6 @@ export class MenuComponent implements OnInit {
 
   logout() {
     this.authService.signOut();
+    localStorage.clear();
   }
 }
