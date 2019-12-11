@@ -5,26 +5,29 @@
         <ngb-tab>
           <ng-template ngbTabTitle>View activity</ng-template>
           <ng-template ngbTabContent>
-            <p class="mock">Comming soon... </p>
+            <p class="mock">Loading... </p>
+            <div class="spinner-border loader" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
           </ng-template>
         </ngb-tab>
-        <ngb-tab>
-          <ng-template ngbTabTitle class="item-title">Suggest activity</ng-template>
+        <ngb-tab id="suggestActivity">
+          <ng-template ngbTabTitle class="item-title" id="suggestActivity">Suggest activity</ng-template>
           <ng-template ngbTabContent>
               <form #heroForm="ngForm" class="suggest-activity">
-                <input name="activityName" [(ngModel)]="activityName" class="form-control form-item" placeholder="Activity name" required>
+                <input name="activityName" id="activityName" [(ngModel)]="activityName" class="form-control form-item" placeholder="Activity name" required>
                 <div class="form-group">
                   <div class="input-group">
-                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="dp" ngbDatepicker #d="ngbDatepicker" required>
+                    <input class="form-control" id="activityDate" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="dp" ngbDatepicker #d="ngbDatepicker" required>
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary calendar-icon" (click)="d.toggle()" type="button"></button>
                     </div>
                   </div>
                 </div>   
                 <div class="time"><div class="time-label">Time</div><ngb-timepicker name="time" [(ngModel)]="time" [ngModelOptions]="{standalone: true}"></ngb-timepicker></div>
-                <input name="trainee" [(ngModel)]="trainee" class="form-control form-item" placeholder="Trainee" required>
-                <textarea name="activityDescription" [(ngModel)]="activityDescription" class="form-control form-item" placeholder="Description..."></textarea>
-                <button (click)="submit()" type="submit" class="submit-activity-button">Submit</button>
+                <input name="trainee" id="trainee" [(ngModel)]="trainee" class="form-control form-item" placeholder="Trainee" required>
+                <textarea name="activityDescription" id="activityDescription" [(ngModel)]="activityDescription" class="form-control form-item" placeholder="Description..."></textarea>
+                <button (click)="submit()" id="submitActivityButton" type="submit" class="submit-activity-button">Submit</button>
             </form>
           </ng-template>
         </ngb-tab>

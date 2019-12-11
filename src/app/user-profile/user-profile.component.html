@@ -1,6 +1,7 @@
+<div class="bg">
 <div class="container">
   <div *ngIf="balance" class="card activity-container">
-    <div class="card-body">
+    <div class="card-body activity-list">
       <h2 class="card-title">Welcome, {{balance?.userName}}</h2>
       <h4 class="card-subtitle mb-2 text-muted">Your current balance is <strong>${{balance?.accountBalance}}</strong></h4>
       <p class="card-text"><strong>Motivation message</strong>: Today should always be better than yesterday.</p>
@@ -15,4 +16,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

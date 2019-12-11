@@ -3,6 +3,7 @@ import { Activity } from "./../models/activity";
 import { Component, OnInit } from "@angular/core";
 import { trigger, transition, animate, style } from "@angular/animations";
 import { AppService } from "../app.service";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: "fm-user-profile",
@@ -25,7 +26,15 @@ balance;
 
   ngOnInit() {
     this.appService.getUserBalances().subscribe(data => this.balance = data);
-    this.appService.getActivities().subscribe(data => this.activities = data);
+    this.appService
+      .getActivities()
+      .pipe(map((x: any[]) => x
+          .filter(act => act.userId === JSON.parse(localStorage.getItem("user")).uid)
+        )
+      )
+      .subscribe(activities => {
+        this.activities = activities;
+      });
   }
 
   submit() {

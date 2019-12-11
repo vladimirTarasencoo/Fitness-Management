@@ -1,4 +1,5 @@
 .activity-container{
+  top: 2em;
   height: 70vh;
   width: 50vw;
   margin: 0 auto;
@@ -7,3 +8,14 @@
 .activities-card {
   clear: both;
 }
+
+.bg {
+  background-image: url('../../assets/man-bridge.jpeg');
+  background-size: cover;
+  height: 85%;
+}
+
+.activity-list {
+  overflow: auto;
+}
+

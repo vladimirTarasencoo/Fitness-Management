@@ -23,7 +23,7 @@ export class CalendarComponent implements OnInit {
     this.appService
       .getActivities()
       .pipe(map((x: any[]) =>
-          x.map(a => {
+          x.filter(x => x.userId === JSON.parse(localStorage.getItem("user")).uid).map(a => { 
             return {
               title: "(".concat(a.time.hour).concat(":").concat(a.time.minute).concat(") ").concat(a.name),
               date: this.getDate(a.date)
