@@ -51,6 +51,9 @@ export class AppService {
   getDietsSnapshots() {
     return this.firestore.collection("diets").get().pipe(map(x => x.docs));
   }
+  getBalanceSnapshots() {
+    return this.firestore.collection("accounts").get().pipe(map(x => x.docs));
+  }
 
   createDiet(diet: any, dietId = "") {
     if(!dietId) {return this.createCollection("diets", diet)};
@@ -62,6 +65,13 @@ export class AppService {
 
   getBalances() {
     return this.firestore.collection("accounts").valueChanges();
+  }
+
+  updateBalance(balance: any, balanceId = "") {
+    return this.firestore
+       .collection("accounts")
+       .doc(balanceId)
+       .set(balance, { merge: true });
   }
 
   getUserBalances() {

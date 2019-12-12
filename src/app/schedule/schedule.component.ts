@@ -12,22 +12,24 @@ import { AppService } from "../app.service";
     trigger("background", [
       transition(":enter", [
         style({ opacity: 0 }),
-        animate("1s", style({ opacity: 1 })),
-      ]),
+        animate("1s", style({ opacity: 1 }))
+      ])
     ])
   ]
 })
 export class ScheduleComponent implements OnInit {
   activityName = "";
   dp = "";
-  time = {hour: 13, minute: 30};
+  time = { hour: 13, minute: 30 };
   trainee = "";
   activityDescription = "";
   activities = [];
-  constructor(private appService: AppService) { }
+  balance: any;
+  constructor(private appService: AppService) {}
 
   ngOnInit() {
-    this.appService.getUsers().subscribe(x => this.activities = x);
+    this.appService.getUsers().subscribe(x => (this.activities = x));
+    this.appService.getUserBalances().subscribe(data => (this.balance = data));
   }
 
   submit() {
@@ -38,7 +40,30 @@ export class ScheduleComponent implements OnInit {
     act.trainee = this.trainee;
     act.activityDescription = this.activityDescription;
     act.userId = JSON.parse(localStorage.getItem("user")).uid;
-    this.appService.createActivity(act);
+    this.appService.getBalanceSnapshots().subscribe(data => {
+      const account = data.filter(
+        (x: any) => x._document.proto.fields.userId.stringValue === act.userId
+      );
+      if (this.balance.accountBalance < 10) {
+        alert("Sorry, You don't have enough funds to add an activity");
+        return;
+      }
+      if(Object.values(act).some(x=>!x)) {
+        alert("Please fill all fields");
+        return;
+      }
+      const obj = {
+        accountBalance:
+          this.balance.accountBalance - 10 >= 0
+            ? this.balance.accountBalance - 10
+            : 0,
+        userId: this.balance.userId,
+        userName: this.balance.userName
+      };
+      this.appService.updateBalance(obj, account[0].id);
+      this.appService.createActivity(act);
+      alert("Activity successfully added!")
+    });
 
     const plan = new IndividualPlan();
     plan.description = "Default description";
@@ -51,4 +76,18 @@ export class ScheduleComponent implements OnInit {
     this.dp = "";
   }
 
+  addFunds(){
+    this.appService.getBalanceSnapshots().subscribe(data => {
+      const account = data.filter(
+        (x: any) => x._document.proto.fields.userId.stringValue === JSON.parse(localStorage.getItem("user")).uid
+      );
+      const obj = {
+        accountBalance:
+          this.balance.accountBalance + 10,
+        userId: this.balance.userId,
+        userName: this.balance.userName
+      };
+      this.appService.updateBalance(obj, account[0].id);
+    });
+  }
 }

@@ -2,15 +2,6 @@
     <fm-calendar class="calendar"></fm-calendar>
     <div class="activity-form">
       <ngb-tabset>
-        <!-- <ngb-tab>
-          <ng-template ngbTabTitle>View activity</ng-template>
-          <ng-template ngbTabContent>
-            <p class="mock">Loading... </p>
-            <div class="spinner-border loader" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-          </ng-template>
-        </ngb-tab> -->
         <ngb-tab id="suggestActivity">
           <ng-template ngbTabTitle class="item-title" id="suggestActivity">Suggest activity</ng-template>
           <ng-template ngbTabContent>
@@ -29,6 +20,14 @@
                 <textarea name="activityDescription" id="activityDescription" [(ngModel)]="activityDescription" class="form-control form-item" placeholder="Description..."></textarea>
                 <button (click)="submit()" id="submitActivityButton" type="submit" class="submit-activity-button">Submit</button>
             </form>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+          <ng-template ngbTabTitle>Add Funds</ng-template>
+          <ng-template ngbTabContent>
+            <div class="funds-container">
+              <button (click)="addFunds()" class="btn btn-secondary btn-funds">Add $10</button>
+            </div>
           </ng-template>
         </ngb-tab>
       </ngb-tabset>
