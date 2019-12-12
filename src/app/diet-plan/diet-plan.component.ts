@@ -10,18 +10,18 @@ import { trigger, transition, style, animate } from "@angular/animations";
     trigger("background", [
       transition(":enter", [
         style({ opacity: 0 }),
-        animate("1s", style({ opacity: 1 })),
-      ]),
+        animate("1s", style({ opacity: 1 }))
+      ])
     ])
   ]
 })
 export class DietPlanComponent implements OnInit {
-diets: any;
+  diets: any;
   constructor(private appService: AppService) {
-    appService.getUserDiets().subscribe((data: any) => this.diets = data.diets);
-   }
-
-  ngOnInit() {
+    appService.getUserDiets().subscribe((data: any) => {
+      if (data) { this.diets = data.diets; }
+    });
   }
 
+  ngOnInit() {}
 }

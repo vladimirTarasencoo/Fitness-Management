@@ -15,14 +15,20 @@
   <div class="sub-container">
     <form #form="ngForm" (ngSubmit)="createDiet(form.value)">
       <label>Breakfast:</label>
-      <input ngModel class="form-control" name="breakfast" type="text">
+      <select name="breakfast" ngModel class="custom-select">
+        <option [ngValue]="breakfast" *ngFor="let breakfast of diets.breakfasts">{{breakfast}}</option>
+      </select>
 
       <label>Lunch:</label>
-      <input ngModel class="form-control" name="lunch" type="text">
+      <select name="lunch" ngModel class="custom-select">
+        <option [ngValue]="lunch" *ngFor="let lunch of diets.lunches">{{lunch}}</option>
+      </select>
 
       <label>Dinner:</label>
-      <input ngModel class="form-control" name="dinner" type="text">
-      <br>
+      <select name="dinner" ngModel class="custom-select">
+        <option [ngValue]="dinner" *ngFor="let dinner of diets.dinner">{{dinner}}</option>
+      </select>
+      <label>User:</label>
       <select name="user" ngModel class="custom-select">
         <option [ngValue]="user" *ngFor="let user of users">{{user?.email}}</option>
       </select>

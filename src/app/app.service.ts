@@ -48,8 +48,16 @@ export class AppService {
     );
   }
 
-  createDiet(diet: any) {
-    return this.createCollection("diets", diet);
+  getDietsSnapshots() {
+    return this.firestore.collection("diets").get().pipe(map(x => x.docs));
+  }
+
+  createDiet(diet: any, dietId = "") {
+    if(!dietId) {return this.createCollection("diets", diet)};
+    return this.firestore
+       .collection("diets")
+       .doc(dietId)
+       .set(diet, { merge: true });
   }
 
   getBalances() {

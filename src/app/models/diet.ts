@@ -1,5 +1,5 @@
 export class Diet {
-  Breakfast: string[];
-  Lunch: string[];
-  Dinner: string[];
+  breakfast: string[];
+  lunch: string[];
+  dinner: string[];
 }

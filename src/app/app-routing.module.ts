@@ -2,12 +2,12 @@ import { AuthGuard } from "./auth.guard";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { RegisterComponent } from "./register/register.component";
 import { SignInComponent } from "./sign-in/sign-in.component";
-import { ScheduleComponent } from "./schedule/schedule.component"
+import { ScheduleComponent } from "./schedule/schedule.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { ActivityComponent } from './activity/activity.component';
-import { CashBalanceComponent } from './cash-balance/cash-balance.component';
-import { DietPlanComponent } from './diet-plan/diet-plan.component';
+import { ActivityComponent } from "./activity/activity.component";
+import { ManageDietsComponent } from "./cash-balance/cash-balance.component";
+import { DietPlanComponent } from "./diet-plan/diet-plan.component";
 const routes: Routes = [
   { path: "", redirectTo: "/sign-in", pathMatch: "full" },
   { path: "sign-in", component: SignInComponent },
@@ -23,14 +23,9 @@ const routes: Routes = [
     canActivate: [AuthGuard] },
   {
     path: "manage-diets",
-    component: CashBalanceComponent,
+    component: ManageDietsComponent,
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: "cash-balance",
-  //   component: CashBalanceComponent,
-  //   canActivate: [AuthGuard]
-  // },
   {
     path: "diet-plan",
     component: DietPlanComponent,

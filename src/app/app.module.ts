@@ -18,7 +18,7 @@ import { SlideMenuComponent } from "./slide-menu/slide-menu.component";
 import { ScheduleModule } from "./schedule/schedule.module";
 import { DietPlanModule } from "./diet-plan/diet-plan.module";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { CashBalanceComponent } from "./cash-balance/cash-balance.component";
+import { ManageDietsComponent } from "./cash-balance/cash-balance.component";
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { CashBalanceComponent } from "./cash-balance/cash-balance.component";
     ActivityComponent,
     MenuComponent,
     SlideMenuComponent,
-    CashBalanceComponent
+    ManageDietsComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,8 @@ import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../auth.service";
 import { trigger, transition, style, animate } from "@angular/animations";
 import { AppService } from "../app.service";
-import { User } from '../models/user';
+import { User } from "../models/user";
+import { SuggestDiets } from "../helpers/diets";
 
 @Component({
   selector: "fm-cash-balance",
@@ -18,18 +19,21 @@ import { User } from '../models/user';
     ])
   ]
 })
-export class CashBalanceComponent implements OnInit {
+export class ManageDietsComponent implements OnInit {
   // user: any
   // email: any
   // balance: any
   // phone: any
   // expirationDate: any
   users: any[];
+  diets: SuggestDiets;
 
   constructor(
     private authService: AuthService,
     private appService: AppService
-  ) {}
+  ) {
+    this.diets = new SuggestDiets();
+  }
 
   ngOnInit() {
     this.appService
@@ -49,10 +53,15 @@ export class CashBalanceComponent implements OnInit {
 
   createDiet(value) {
     const diet = new Diet();
-    diet.Breakfast = [value.breakfast];
-    diet.Lunch = [value.lunch];
-    diet.Dinner = [value.dinner];
-    const obj = { ...diet, userId: value.user.uid };
-    this.appService.createDiet(obj);
+    diet.breakfast = [value.breakfast];
+    diet.lunch = [value.lunch];
+    diet.dinner = [value.dinner];
+    const obj = { diets: {...diet}, userId: value.user.uid };
+    this.appService.getDietsSnapshots().subscribe(data => {
+      const diet = data.filter((x: any)=>x._document.proto.fields.userId.stringValue === obj.userId);
+      this.appService.createDiet(obj, diet[0].id);
+    });
+
+    // this.appService.createDiet(obj);
   }
 }
